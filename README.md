@@ -13,5 +13,7 @@ And upon successful completion a single file will exist on disk `./tini` which c
 
 - Dependencies are managed with [glide](https://github.com/Masterminds/glide) because otherwise builds are 🙁, install with `go get github.com/Masterminds/glide` because yolo
   - Could update go [go-dep](https://github.com/golang/dep) but I haven't used it yet
-  - Install with `glide install`, add packages with `glide get`, update with `glide update`
+- Install packages with `glide install`, add packages with `glide get`, update versions with `glide update`
+- Build with `go build ./...` (output will be named for the directory under `cmd/` and placed in the root)
+- Test with `go test ./...`
 
