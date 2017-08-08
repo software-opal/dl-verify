@@ -23,10 +23,10 @@ func Download(url string, verbose bool) (string, error) {
 
 	// Create the local temporary file (and close it when we're done)
 	out, err := os.Create(localPath)
-	defer out.Close()
 	if err != nil {
 		return "", err
 	}
+	defer out.Close()
 
 	if verbose {
 		fmt.Printf("Download - fetching file from: %s", url)
@@ -34,10 +34,10 @@ func Download(url string, verbose bool) (string, error) {
 
 	// Fetch the file
 	resp, err := http.Get(url)
-	defer resp.Body.Close()
 	if err != nil {
 		return "", err
 	}
+	defer resp.Body.Close()
 
 	// Copy response to file
 	_, err = io.Copy(out, resp.Body)
