@@ -1,0 +1,20 @@
+language: go
+
+go:
+   - 1.8
+   - 1.9
+
+before_install:
+  glide install
+
+install:
+  - GOOS=linux GOARCH=amd64 go build ./...
+	- GOOS=darwin GOARCH=amd64 go build ./...
+
+script:
+  - go test -v ./...
+	
+notifications:
+  email: false
+
+
