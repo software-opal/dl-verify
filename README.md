@@ -15,5 +15,5 @@ And upon successful completion a single file will exist on disk `./tini` which c
   - Could update go [go-dep](https://github.com/golang/dep) but I haven't used it yet
 - Install packages with `glide install`, add packages with `glide get`, update versions with `glide update`
 - Build with `go build ./...` (output will be named for the directory under `cmd/` and placed in the root)
-- Test with `go test ./...`
+- Test with `go test ./lib/...` to avoid testing the vendored libraries
 
