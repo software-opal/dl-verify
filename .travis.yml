@@ -1,18 +1,21 @@
 language: go
+dist: xenial
 
 go:
-   - 1.8
-   - 1.9
+  - 1.8
+  - 1.9
 
 before_install:
-  glide install
+  - go get github.com/Masterminds/glide
+  - glide --version
+  - glide install
 
 install:
-  - GOOS=linux GOARCH=amd64 go build ./...
-  - GOOS=darwin GOARCH=amd64 go build ./...
+  - GOOS=linux GOARCH=amd64 go build ./cmd/dlv
+  - GOOS=darwin GOARCH=amd64 go build ./cmd/dlv
 
 script:
-  - go test -v ./...
+  - go test -v ./lib/
 
 notifications:
   email: false

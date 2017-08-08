@@ -1,6 +1,18 @@
-hash: df84c0659869644564f417b1f813b61d666f34f954387dcb4503d96b6df60b8b
-updated: 2017-08-08T14:36:32.616818497+12:00
+hash: b465f4d45ff4a5418e15501e969da86efb4718bb1212f2df7bd954074dcfec1b
+updated: 2017-08-08T15:31:47.046180034+12:00
 imports:
 - name: github.com/jessevdk/go-flags
   version: 96dc06278ce32a0e9d957d590bb987c81ee66407
-testImports: []
+testImports:
+- name: github.com/davecgh/go-spew
+  version: 04cdfd42973bb9c8589fd6a731800cf222fde1a9
+  subpackages:
+  - spew
+- name: github.com/pmezard/go-difflib
+  version: d8ed2627bdf02c080bf22230dbb337003b7aba2d
+  subpackages:
+  - difflib
+- name: github.com/stretchr/testify
+  version: 69483b4bd14f5845b5a1e55bca19e954e827f1d0
+  subpackages:
+  - assert

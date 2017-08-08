@@ -12,5 +12,6 @@
 
 # Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
 .glide/
-dlv
+# Ignore the built binary.
+/dlv
 vendor/

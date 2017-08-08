@@ -3,6 +3,8 @@
 
 A project to build a small binary file which will download and verify the signature of that file against a given key.
 
+[![Build Status](https://travis-ci.org/leesdolphin/dl-verify.svg?branch=master)](https://travis-ci.org/leesdolphin/dl-verify)
+
 Ideal useage:
 
 `dl-verify --signature-ext='.asc' --signing-key=595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 https://github.com/krallin/tini/releases/download/v0.15.0/tini ./tini`
@@ -16,4 +18,3 @@ And upon successful completion a single file will exist on disk `./tini` which c
 - Install packages with `glide install`, add packages with `glide get`, update versions with `glide update`
 - Build with `go build ./...` (output will be named for the directory under `cmd/` and placed in the root)
 - Test with `go test ./lib/...` to avoid testing the vendored libraries
-
