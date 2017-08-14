@@ -1,11 +1,22 @@
-hash: b465f4d45ff4a5418e15501e969da86efb4718bb1212f2df7bd954074dcfec1b
-updated: 2017-08-08T15:31:47.046180034+12:00
+hash: d07266449726d6a1e56a868bad2e6e47f0adaf3948334958cabbe0ed5d4bb3ab
+updated: 2017-08-11T15:52:13.166639626+12:00
 imports:
 - name: github.com/jessevdk/go-flags
   version: 96dc06278ce32a0e9d957d590bb987c81ee66407
+- name: github.com/sirupsen/logrus
+  version: a3f95b5c423586578a4e099b11a46c2479628cac
+- name: golang.org/x/crypto
+  version: b176d7def5d71bdd214203491f89843ed217f420
+  subpackages:
+  - ssh/terminal
+- name: golang.org/x/sys
+  version: e42485b6e20ae7d2304ec72e535b103ed350cc02
+  subpackages:
+  - unix
+  - windows
 testImports:
 - name: github.com/davecgh/go-spew
-  version: 04cdfd42973bb9c8589fd6a731800cf222fde1a9
+  version: 6d212800a42e8ab5c146b8ace3490ee17e5225f9
   subpackages:
   - spew
 - name: github.com/pmezard/go-difflib

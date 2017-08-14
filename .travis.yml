@@ -3,9 +3,12 @@ dist: xenial
 
 go:
   - 1.8
-  - 1.9
+  # - 1.9
 
 before_install:
+  - gofmt -s -d ./cmd ./lib 2>&1 | tee gofmt.diff
+  # `-s` is true if the file exists and has size > 0. Invert.
+  - [ ! -s gofmt.diff ]
   - go get github.com/Masterminds/glide
   - glide --version
   - glide install
