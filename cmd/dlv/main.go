@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -9,6 +10,7 @@ import (
 	"github.com/jessevdk/go-flags"
 	log "github.com/sirupsen/logrus"
 
+	"github.com/leesdolphin/dl-verify/gpg"
 	"github.com/leesdolphin/dl-verify/lib"
 )
 
@@ -19,6 +21,7 @@ type Config struct {
 	OutDir  string `short:"o" long:"output-dir" description:"File output directory"`
 
 	Checksums dlverify.ChecksumConfig `group:"Checksums Verification"`
+	// GPG       gpg.SignatureConfig     `group:"GPG Signature Verification"`
 }
 
 // ConfigureLogging sets the logger's settings to those specified in Config
@@ -52,6 +55,13 @@ func writeOutFile(path string) error {
 }
 
 func main() {
+	{
+		key, _ := gpg.NewKeyID("595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7")
+		ksi := gpg.DefaultKeyServerInformation()
+		k, err := ksi.DownloadKey(context.Background(), key, nil)
+		fmt.Printf("%#+v\n\n%#+v", k, err)
+	}
+
 	// Parse command line arguments
 	args := Config{}
 	_, err := flags.Parse(&args)
